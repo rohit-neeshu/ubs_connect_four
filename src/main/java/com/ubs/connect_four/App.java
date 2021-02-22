@@ -1,6 +1,5 @@
 package com.ubs.connect_four;
 
-import java.security.InvalidParameterException;
 import java.util.Scanner;
 
 import com.ubs.connect_four.exception.InvalidMoveException;
