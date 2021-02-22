@@ -10,8 +10,7 @@ public class PlayBoardImpl extends ModifiableBoard {
 	private final int height;
 	private final int width;
 	private final char[][] board;
-	public final char BORDER = '|';
-	public final char EMPTY = ' ';
+	public static final char BORDER = '|';
 
 	public PlayBoardImpl(int height, int width) {
 		this.height = height;

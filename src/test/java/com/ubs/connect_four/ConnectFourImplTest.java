@@ -38,17 +38,17 @@ public class ConnectFourImplTest {
 	}
 	
 	@Test(expected = InvalidMoveException.class)
-	public void testNextMove1() throws InvalidMoveException  {
+	public void testNextMoveColumnValueOutSideBoard() throws InvalidMoveException  {
 		connectFour.nextMove(10);
 	}
 	
 	@Test(expected = InvalidMoveException.class)
-	public void testNextMove2() throws InvalidMoveException  {
+	public void testNextMoveColumnValueOutSideBoard1() throws InvalidMoveException  {
 		connectFour.nextMove(0);
 	}
 	
 	@Test(expected = InvalidMoveException.class)
-	public void testNextMove3() throws InvalidMoveException  {
+	public void testNextMoveWhenColumnIsFull() throws InvalidMoveException  {
 		connectFour.nextTurn();
 		connectFour.nextMove(1);//1
 		connectFour.nextTurn();
@@ -76,7 +76,7 @@ public class ConnectFourImplTest {
 	}
 	
 	@Test
-	public void testWinner1() throws InvalidMoveException  {
+	public void testWinnerVertical1() throws InvalidMoveException  {
 		connectFour.nextTurn();
 		connectFour.nextMove(1);//1
 		connectFour.nextMove(1);//2
@@ -101,6 +101,16 @@ public class ConnectFourImplTest {
 		connectFour.nextMove(3);//3
 		connectFour.nextMove(3);//4
 		Assert.assertFalse(connectFour.isWinner());
+	}
+	
+	@Test
+	public void testWinnerHorizontal2() throws InvalidMoveException  {
+		connectFour.nextTurn();
+		connectFour.nextMove(1);//1
+		connectFour.nextMove(2);//2
+		connectFour.nextMove(3);//3
+		connectFour.nextMove(4);//4
+		Assert.assertTrue(connectFour.isWinner());
 	}
 	
 	@Test
